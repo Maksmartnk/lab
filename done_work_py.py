@@ -1,26 +1,32 @@
 el = 0
 while el != "end":
-    el = int(input("1 , 2 : " ))
-    if el == 1 :
-        text = input("напишіть текст:") 
-    list_text = list(text)
-    sort_text = sorted(list_text)
-    set_text = set(sort_text)
-    print(set_text)
-    print("thank for use :)")
-    if el == 2:
-        text1 = input("напишіть текст:")
-        list_text1 = list(text1)
-        set_text1 = set(list_text1)
-        set_text1 = sorted(list_text1)
-        for I in set_text1:
-            print(I)
-        
-        
-        
+    try:
+        el = int(input("1 , 2 : " ))
+        if el == 1 :
+            input_text = input("Введіть текст: ")
 
-    else:
-        print("wrong write")
+        # створюю пустий словник який буду заповнювати
+            letter_count = {}
+
+        # Перебераю кожен ключ
+            for char in input_text:
+                
+        # пробускаю пробіли
+                if char != ' ':
+                
+                    letter_count[char] = letter_count.get(char, 0) + 1
+
+    # результат
+            print("Кількість кожної літери у введеному тексті:")
+            for letter, count in letter_count.items():
+                print(f"{letter}: {count}")
+
+        if el == 2 :
+            
+            
+    except ValueError:
+        print("помилка значення")
+        
         
             
     
